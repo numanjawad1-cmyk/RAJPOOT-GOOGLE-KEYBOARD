@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
+
+    <!-- Normal toolbar -->
+    <LinearLayout
+        android:id="@+id/toolbarNormal"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:background="?attr/colorSurfaceVariant">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:hint="Search clipboard..."
+            app:boxCornerRadiusBottomEnd="18dp"
+            app:boxCornerRadiusBottomStart="18dp"
+            app:boxCornerRadiusTopEnd="18dp"
+            app:boxCornerRadiusTopStart="18dp"
+            app:startIconDrawable="@drawable/ic_search">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:textSize="13sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearAll"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:textSize="12sp"
+            android:textColor="?attr/colorError" />
+    </LinearLayout>
+
+    <!-- Selection mode toolbar -->
+    <LinearLayout
+        android:id="@+id/toolbarSelection"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:background="?attr/colorPrimaryContainer"
+        android:visibility="gone">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelSelection"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/tvSelectedCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 selected"
+            android:textSize="14sp"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:paddingStart="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectAll"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDeleteSelected"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_delete"
+            app:iconTint="?attr/colorError" />
+    </LinearLayout>
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="No clipboard items.\nCopy something to get started."
+        android:textAlignment="center"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <!-- Clipboard list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvClipboard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingVertical="4dp" />
+
+</LinearLayout>

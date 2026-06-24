@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="3dp"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="10dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp">
+
+        <CheckBox
+            android:id="@+id/cbSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            android:clickable="false" />
+
+        <ImageView
+            android:id="@+id/ivPin"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/ic_pin_filled"
+            android:contentDescription="Pinned"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvTimestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ivPinAction"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Pin item"
+            android:src="@drawable/ic_pin_outline"
+            app:tint="@color/md_on_surface_variant" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ivDelete"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete item"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/md_error" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

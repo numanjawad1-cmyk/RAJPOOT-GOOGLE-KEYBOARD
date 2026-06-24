@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clipboard Keyboard</string>
+    <string name="keyboard_label">Clipboard Keyboard</string>
+    <string name="clipboard_empty">No clipboard items</string>
+    <string name="paste_next">Paste Next</string>
+    <string name="clear_all">Clear All</string>
+    <string name="pin">Pin</string>
+    <string name="unpin">Unpin</string>
+    <string name="delete">Delete</string>
+    <string name="search_clipboard">Search clipboard…</string>
+</resources>
