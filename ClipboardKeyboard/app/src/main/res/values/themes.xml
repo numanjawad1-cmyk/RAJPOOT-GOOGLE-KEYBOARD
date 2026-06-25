@@ -12,8 +12,7 @@
         <item name="colorSurfaceVariant">@color/md_surface_variant</item>
         <item name="colorOnSurfaceVariant">@color/md_on_surface_variant</item>
         <item name="colorError">@color/md_error</item>
-        <item name="colorBackground">@color/md_background</item>
-        <item name="colorOnBackground">@color/md_on_background</item>
+        <item name="android:colorBackground">@color/md_background</item>
         <item name="android:windowBackground">@color/md_background</item>
     </style>
 </resources>
