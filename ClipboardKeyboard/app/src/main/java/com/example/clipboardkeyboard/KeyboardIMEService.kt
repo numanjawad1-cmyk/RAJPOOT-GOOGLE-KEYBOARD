@@ -5,8 +5,8 @@ import android.content.Context
 import android.inputmethodservice.InputMethodService
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.view.ContextThemeWrapper
 import android.view.KeyEvent
-import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import kotlinx.coroutines.*
@@ -40,7 +40,8 @@ class KeyboardIMEService : InputMethodService() {
     }
 
     override fun onCreateInputView(): View {
-        keyboardView = KeyboardView(this, repository, serviceScope)
+        val themedContext = ContextThemeWrapper(this, R.style.Theme_ClipboardKeyboard)
+        keyboardView = KeyboardView(themedContext, repository, serviceScope)
         keyboardView.onKeyPress = { key -> handleKey(key) }
         keyboardView.onPasteFromClipboard = { pasteNextFromQueue() }
         return keyboardView.rootView
